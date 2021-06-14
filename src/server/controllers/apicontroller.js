@@ -163,7 +163,7 @@ apiController.reqAllUsersData = async (req, res, next) => {
       const tokenVar = `token ${tokenArr[el]}`
       let data = await fetch(`https://api.github.com/user`, {method: 'GET', headers: {Authorization: tokenVar}});
       data = await data.json();
-      // console.log("line 113", data)
+      console.log("line 113", data)
 
       let repo = await fetch(data.repos_url)
       repo = await repo.json()
@@ -196,7 +196,7 @@ apiController.reqAllUsersData = async (req, res, next) => {
     await resultArr.push(userObj)
     // console.log("145", resultArr);
     }
-  // console.log("line 147", resultArr);
+  console.log("line 147", resultArr);
   // pass res arr through res.locals
 
   res.locals.allUsers = resultArr;
